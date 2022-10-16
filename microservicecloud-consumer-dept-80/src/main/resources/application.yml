@@ -1,0 +1,11 @@
+server:
+  port: 80
+
+eureka:
+  client:
+    register-with-eureka: true #默认为true，如果写成false的话，就不会将客户端服务注册到EurekaServer中
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    instance-id: microservicecloud-dept80
+    prefer-ip-address: true #访问路径可以显示IP地址
