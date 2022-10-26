@@ -13,7 +13,8 @@
     <description>部门微服务消费者</description>
 
     <dependencies>
-        <dependency><!-- 自己定义的api -->
+        <!--自己定义的api-->
+        <dependency>
             <groupId>com.hzhiping</groupId>
             <artifactId>microservicecloud-api</artifactId>
             <version>${project.version}</version>
