@@ -1,11 +1,16 @@
 server:
   port: 80
 
+#需要添加这个配置，否则客户端无法注册进Eureka
+spring:
+  application:
+    name: microservicecloud-dept
+
 eureka:
   client:
     register-with-eureka: true #默认为true，如果写成false的话，就不会将客户端服务注册到EurekaServer中
     service-url:
-      defaultZone: http://localhost:7001/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/ #http://localhost:7001/eureka/
   instance:
     instance-id: microservicecloud-dept80
     prefer-ip-address: true #访问路径可以显示IP地址

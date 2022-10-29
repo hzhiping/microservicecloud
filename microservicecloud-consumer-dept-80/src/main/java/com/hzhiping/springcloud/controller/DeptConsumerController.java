@@ -11,10 +11,15 @@ import java.util.List;
 
 /**
  * @author hzhiping
+ * @date 2022/10/29
  */
 @RestController
 public class DeptConsumerController {
-    private static final String REST_URL_PREFIX = "http://localhost:8001";
+    //private static final String REST_URL_PREFIX = "http://localhost:8001";
+    /**
+     * 修改为访问为服务的地址名
+     */
+    private static final String REST_URL_PREFIX = "http://MICROSERVICECLOUD-DEPT";
 
     /**
      * 使用RestTemplate访问RESTful接口非常的简单无脑粗暴。
@@ -39,6 +44,7 @@ public class DeptConsumerController {
         return restTemplate.getForObject(DeptConsumerController.REST_URL_PREFIX + "/dept/get/" + id, Dept.class);
     }
 
+    @SuppressWarnings("ALL")
     @RequestMapping(value = "/consumer/dept/list")
     public List<Dept> list() {
         return restTemplate.getForObject(DeptConsumerController.REST_URL_PREFIX + "/dept/list", List.class);
