@@ -19,7 +19,7 @@ public class DeptConsumerController {
     /**
      * 修改为访问为服务的地址名
      */
-    private static final String REST_URL_PREFIX = "http://MICROSERVICECLOUD-DEPT/";
+    private static final String REST_URL_PREFIX = "http://MICROSERVICECLOUD-DEPT";
 
     /**
      * 使用RestTemplate访问RESTful接口非常的简单无脑粗暴。
