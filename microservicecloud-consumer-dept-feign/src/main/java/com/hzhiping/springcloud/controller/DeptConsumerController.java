@@ -18,7 +18,6 @@ public class DeptConsumerController {
     @Autowired
     private DeptClientService deptClientService;
 
-
     @RequestMapping(value = "/consumer/dept/get/{id}")
     public Dept get(@PathVariable("id") Long id) {
         return this.deptClientService.get(id);
@@ -26,6 +25,16 @@ public class DeptConsumerController {
 
     @RequestMapping(value = "/consumer/dept/list")
     public List<Dept> list() {
+        List<Dept> deptList ;
+        try {
+            deptList = this.deptClientService.list();
+        } catch (Exception e) {
+            throw new RuntimeException("数据库连接出问题了");
+        }
+        deptList.clear();
+        if (deptList.isEmpty()) {
+            throw new RuntimeException("hhhhh");
+        }
         return this.deptClientService.list();
     }
 
