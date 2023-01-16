@@ -1,11 +1,10 @@
 package com.hzhiping.springcloud.controller;
 
 import com.hzhiping.entity.Dept;
+import com.hzhiping.entity.DeptParam;
 import com.hzhiping.service.DeptClientService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,7 +24,7 @@ public class DeptConsumerController {
 
     @RequestMapping(value = "/consumer/dept/list")
     public List<Dept> list() {
-        List<Dept> deptList ;
+        List<Dept> deptList;
         try {
             deptList = this.deptClientService.list();
         } catch (Exception e) {
@@ -41,5 +40,12 @@ public class DeptConsumerController {
     @RequestMapping(value = "/consumer/dept/add")
     public Object add(Dept dept) {
         return this.deptClientService.add(dept);
+    }
+
+    @RequestMapping(value = "/consumer/dept/getDeptByParams", method = RequestMethod.POST)
+    public Dept getDeptByParams(@RequestBody DeptParam deptParam) {
+        Long deptNo = deptParam.getDeptNo();
+        String dbSource = deptParam.getDbSource();
+        return this.deptClientService.getDeptByParams(deptNo, dbSource);
     }
 }

@@ -50,4 +50,16 @@ public class DeptController {
         }
         return this.discoveryClient;
     }
+
+    /**
+     * 根据部门id和数据源获取部门信息
+     *
+     * @param deptNo   部门id
+     * @param dbSource 数据源
+     * @return {@link Dept}
+     */
+    @RequestMapping(value = "/dept/getDeptByParams", method = RequestMethod.GET)
+    public Dept getDeptByParams(@RequestParam Long deptNo, @RequestParam String dbSource) {
+        return service.getDeptByParams(deptNo, dbSource);
+    }
 }

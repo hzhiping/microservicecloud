@@ -36,4 +36,10 @@ public class DeptServiceImpl implements DeptService {
         return null;
     }
 
+    @Override
+    public Dept getDeptByParams(Long deptNo, String dbSource) {
+        Dept dept = deptDao.findByParams(deptNo, dbSource);
+        return dept;
+    }
+
 }

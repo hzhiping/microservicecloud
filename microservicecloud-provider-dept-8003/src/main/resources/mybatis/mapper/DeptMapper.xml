@@ -22,4 +22,11 @@
         INSERT INTO dept(dname, db_source)
         VALUES (#{deptName, jdbcType=VARCHAR}, DATABASE());
     </insert>
+    <select id="findByParams" resultType="Dept" parameterType="com.hzhiping.entity.Dept">
+        select deptno as deptNo, dname as deptName, db_source as dbSource
+        from dept
+        where 1 = 1
+          and deptno = #{deptNo}
+          and db_source = #{dbSource}
+    </select>
 </mapper>

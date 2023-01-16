@@ -2,11 +2,13 @@ package com.hzhiping.dao;
 
 import com.hzhiping.entity.Dept;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 /**
  * @author hzhiping
+ * @date 2023/01/16
  */
 @Mapper
 public interface DeptDao {
@@ -33,4 +35,12 @@ public interface DeptDao {
      */
     List<Dept> findAll();
 
+    /**
+     * 根据部门id和数据源查询部门信息
+     *
+     * @param deptNo   部门id
+     * @param dbSource 数据源
+     * @return {@link Dept}
+     */
+    Dept findByParams(@Param("deptNo") Long deptNo, @Param("dbSource") String dbSource);
 }

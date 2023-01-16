@@ -43,4 +43,13 @@ public interface DeptService {
      */
     @SuppressWarnings("ALL")
     List<Dept> findByName(String deptName);
+
+    /**
+     * 根据部门号和数据源来获取对应的部门信息
+     *
+     * @param deptNo   部门号
+     * @param dbSource 数据源
+     * @return {@link Dept}
+     */
+    Dept getDeptByParams(Long deptNo, String dbSource);
 }

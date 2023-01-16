@@ -81,6 +81,7 @@
         <module>microservicecloud-provider-dept-8002</module>
         <module>microservicecloud-provider-dept-8003</module>
         <module>microservicecloud-consumer-dept-feign</module>
+        <module>microservicecloud-long-link-call</module>
     </modules>
 
     <build>
