@@ -9,7 +9,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>microservicecloud-long-link-call</artifactId>
+    <artifactId>microservicecloud-consumer-long-link</artifactId>
 
     <dependencies>
         <!--引入自己定义的api通用包，可以使用Dept部门Entity-->

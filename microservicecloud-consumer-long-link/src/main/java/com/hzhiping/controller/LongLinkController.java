@@ -29,7 +29,6 @@ public class LongLinkController {
     public Dept getDeptByParams(@RequestParam Long deptNo, @RequestParam String dbSource) {
         DeptParam param = new DeptParam();
         param.setDeptNo(deptNo).setDbSource(dbSource);
-        Dept dept = longLinkDeptClient.getDeptByParams(param);
         return longLinkDeptClient.getDeptByParams(param);
     }
 }
