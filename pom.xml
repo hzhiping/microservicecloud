@@ -82,6 +82,7 @@
         <module>microservicecloud-provider-dept-8003</module>
         <module>microservicecloud-consumer-dept-feign</module>
         <module>microservicecloud-consumer-long-link</module>
+        <module>microservicecloud-provider-dept-hystrix-8001</module>
     </modules>
 
     <build>

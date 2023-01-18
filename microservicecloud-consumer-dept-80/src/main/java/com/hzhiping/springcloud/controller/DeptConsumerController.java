@@ -32,7 +32,7 @@ public class DeptConsumerController {
      * http://localhost/consumer/dept/add?deptName=bigdata
      *
      * @param dept 部门
-     * @return 添加成功返回true
+     * @return boolean
      */
     @RequestMapping("/consumer/dept/add")
     public boolean add(Dept dept) {

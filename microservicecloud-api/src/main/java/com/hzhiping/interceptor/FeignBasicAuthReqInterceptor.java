@@ -29,7 +29,7 @@ public class FeignBasicAuthReqInterceptor implements RequestInterceptor {
     public void apply(RequestTemplate template) {
         //1、在apply中统一设置认证
         template.header("Authorization", this.authorization);
-        System.out.println("统一设置header");
+        //System.out.println("统一设置header");
         //2、拦截获取请求header的信息并输出，不设置转发
         //getHeaderInfo(template);
     }
