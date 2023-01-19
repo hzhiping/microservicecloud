@@ -2,6 +2,7 @@ package com.hzhiping.service;
 
 import com.hzhiping.config.FeignConfiguration;
 import com.hzhiping.entity.Dept;
+import com.hzhiping.springcloud.DeptClientServiceFallbackFactory;
 import feign.Param;
 import feign.RequestLine;
 import org.springframework.cloud.netflix.feign.FeignClient;
@@ -15,7 +16,11 @@ import java.util.List;
  * @author hzhiping
  * @date 2023/01/10
  */
-@FeignClient(value = "MICROSERVICECLOUD-DEPT", configuration = FeignConfiguration.class)
+@FeignClient(
+        value = "MICROSERVICECLOUD-DEPT",
+        configuration = FeignConfiguration.class,
+        fallbackFactory = DeptClientServiceFallbackFactory.class
+)
 //@Headers(value = {"Authorization: xxx"})
 public interface DeptClientService {
     //@RequestMapping(value = "/dept/get/{id}", method = RequestMethod.GET)

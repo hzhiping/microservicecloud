@@ -3,7 +3,7 @@ server:
 
 feign:
   hystrix:
-    enabled: false
+    enabled: true #开启服务降级
 
 eureka:
   client:
