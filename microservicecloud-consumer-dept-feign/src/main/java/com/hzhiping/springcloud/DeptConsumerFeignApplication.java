@@ -13,7 +13,7 @@ import org.springframework.web.context.request.RequestContextListener;
  */
 @SpringBootApplication
 @EnableEurekaClient
-@EnableFeignClients(basePackages= {"com.hzhiping"})
+@EnableFeignClients(basePackages = {"com.hzhiping"})
 public class DeptConsumerFeignApplication {
     public static void main(String[] args) {
         SpringApplication.run(DeptConsumerFeignApplication.class, args);

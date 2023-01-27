@@ -22,11 +22,12 @@
 DROP TABLE IF EXISTS `dept`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `dept` (
-  `deptno` bigint(20) NOT NULL AUTO_INCREMENT,
-  `dname` varchar(60) DEFAULT NULL,
-  `db_source` varchar(60) DEFAULT NULL,
-  PRIMARY KEY (`deptno`)
+CREATE TABLE `dept`
+(
+    `deptno`    bigint(20) NOT NULL AUTO_INCREMENT,
+    `dname`     varchar(60) DEFAULT NULL,
+    `db_source` varchar(60) DEFAULT NULL,
+    PRIMARY KEY (`deptno`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -34,11 +35,20 @@ CREATE TABLE `dept` (
 -- Dumping data for table `dept`
 --
 
-LOCK TABLES `dept` WRITE;
+LOCK
+TABLES `dept` WRITE;
 /*!40000 ALTER TABLE `dept` DISABLE KEYS */;
-INSERT INTO `dept` VALUES (1,'开发部','clouddb01'),(2,'人事部','clouddb01'),(3,'财务部','clouddb01'),(4,'市场部','clouddb01'),(5,'运维部','clouddb01'),(6,'运保处','clouddb01'),(9,'飞行处','clouddb01');
+INSERT INTO `dept`
+VALUES (1, '开发部', 'clouddb01'),
+       (2, '人事部', 'clouddb01'),
+       (3, '财务部', 'clouddb01'),
+       (4, '市场部', 'clouddb01'),
+       (5, '运维部', 'clouddb01'),
+       (6, '运保处', 'clouddb01'),
+       (9, '飞行处', 'clouddb01');
 /*!40000 ALTER TABLE `dept` ENABLE KEYS */;
-UNLOCK TABLES;
+UNLOCK
+TABLES;
 
 --
 -- Dumping routines for database 'clouddb01'

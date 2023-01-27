@@ -3,9 +3,6 @@ package com.hzhiping.interceptor;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import lombok.Data;
-import org.apache.catalina.core.ApplicationContext;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 

@@ -8,23 +8,21 @@ import com.netflix.loadbalancer.Server;
 import java.util.List;
 
 public class MyRandomRule extends AbstractLoadBalancerRule {
-    public MyRandomRule() {
-    }
+    /**
+     * 总共被调用的次数
+     */
+    private int total = 0;
 
     //1、当total==5的时候，指针才能往下走
     //2、index=0：当前对外提供服务的服务器地址
     //3、total需要重置为0，但是已经达到过一个5次，index=1
     //4、分析：我们5次，但是微服务只有8001，8002，8003三台可以么？
-
-
-    /**
-     * 总共被调用的次数
-     */
-    private int total = 0;
     /**
      * 当前提供服务的机器号
      */
     private int currentIndex = 0;
+    public MyRandomRule() {
+    }
 
     @Override
     public void initWithNiwsConfig(IClientConfig clientConfig) {

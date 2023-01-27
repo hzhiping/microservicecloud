@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hzhiping.dao.DeptDao">
+    <parameterMap id="insert" type="com.hzhiping.entity.Dept">
+        <parameter jdbcType="INTEGER" property="deptNo"></parameter>
+        <parameter jdbcType="VARCHAR" property="deptName"></parameter>
+        <parameter jdbcType="VARCHAR" property="dbSource"></parameter>
+    </parameterMap>
+    <!--这里的id记得对应dao接口方法名-->
+    <select id="findById" resultType="Dept" parameterType="java.lang.Long">
+        select deptno as deptNo, dname as deptName, db_source as dbSource
+        from dept
+        where deptno = #{deptno};
+    </select>
+    <select id="findAll" resultType="Dept">
+        select deptno as deptNo, dname as deptName, db_source as dbSource
+        from dept;
+    </select>
+    <insert id="addDept" parameterMap="insert">
+        INSERT INTO dept(dname, db_source)
+        VALUES (#{deptName, jdbcType=VARCHAR}, DATABASE());
+    </insert>
+    <select id="findByParams" resultType="Dept" parameterType="com.hzhiping.entity.Dept">
+        select deptno as deptNo, dname as deptName, db_source as dbSource
+        from dept
+        where 1 = 1
+          and deptno = #{deptNo}
+          and db_source = #{dbSource}
+    </select>
+</mapper>
