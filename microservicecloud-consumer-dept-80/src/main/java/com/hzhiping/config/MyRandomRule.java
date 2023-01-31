@@ -21,6 +21,7 @@ public class MyRandomRule extends AbstractLoadBalancerRule {
      * 当前提供服务的机器号
      */
     private int currentIndex = 0;
+
     public MyRandomRule() {
     }
 

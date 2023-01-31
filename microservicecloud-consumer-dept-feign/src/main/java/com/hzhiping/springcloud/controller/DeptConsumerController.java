@@ -13,6 +13,7 @@ import java.util.List;
  * @date 2023/01/10
  */
 @RestController
+@SuppressWarnings("ALL")
 public class DeptConsumerController {
     @Autowired
     private DeptClientService deptClientService;

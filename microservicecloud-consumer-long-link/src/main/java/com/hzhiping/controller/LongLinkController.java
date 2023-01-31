@@ -2,6 +2,9 @@ package com.hzhiping.controller;
 
 import com.hzhiping.entity.Dept;
 import com.hzhiping.entity.DeptParam;
+import com.hzhiping.exception.MyException;
+import com.hzhiping.exception.MyExceptionEnum;
+import com.hzhiping.response.CommonResult;
 import com.hzhiping.service.LongLinkDeptClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2023/01/16
  */
 @RestController
+@SuppressWarnings("ALL")
 public class LongLinkController {
     @Autowired
     private LongLinkDeptClient longLinkDeptClient;
@@ -26,9 +30,14 @@ public class LongLinkController {
      * @return {@link Dept}
      */
     @RequestMapping(value = "/dept/getDeptByParams", method = RequestMethod.GET)
-    public Dept getDeptByParams(@RequestParam Long deptNo, @RequestParam String dbSource) {
+    public CommonResult<Dept> getDeptByParams(@RequestParam Long deptNo, @RequestParam String dbSource) {
         DeptParam param = new DeptParam();
         param.setDeptNo(deptNo).setDbSource(dbSource);
-        return longLinkDeptClient.getDeptByParams(param);
+        Dept dept = longLinkDeptClient.getDeptByParams(param);
+        if (dept == null) {
+            throw new MyException(MyExceptionEnum.NULL_EXCEPTION);
+        }
+        //统一返回对象
+        return CommonResult.success("", dept);
     }
 }
