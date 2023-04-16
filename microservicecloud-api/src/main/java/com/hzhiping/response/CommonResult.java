@@ -44,6 +44,4 @@ public class CommonResult<T> {
         result.data = null;
         return result;
     }
-
-
 }
