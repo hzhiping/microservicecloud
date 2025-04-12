@@ -37,7 +37,7 @@ public class LongLinkController {
         if (dept == null) {
             throw new MyException(MyExceptionEnum.NULL_EXCEPTION);
         }
-        //统一返回对象
+        // 统一返回对象
         return CommonResult.success("", dept);
     }
 }

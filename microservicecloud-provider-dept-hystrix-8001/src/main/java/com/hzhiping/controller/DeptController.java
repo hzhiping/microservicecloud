@@ -30,7 +30,7 @@ public class DeptController {
     }
 
     @RequestMapping(value = "/dept/get/{id}", method = RequestMethod.GET)
-    //一旦调用服务方法失败并抛出了错误信息之后，会自动调用@HystrixCommand标注好的fallbackMethod调用类中的指定方法
+    // 一旦调用服务方法失败并抛出了错误信息之后，会自动调用@HystrixCommand标注好的fallbackMethod调用类中的指定方法
     @HystrixCommand(fallbackMethod = "processHystrixGet")
     public Dept get(@PathVariable(name = "id") Long id) {
         Dept dept = service.get(id);
@@ -53,11 +53,11 @@ public class DeptController {
 
     @RequestMapping(value = "/dept/discovery", method = RequestMethod.GET)
     public Object discovery() {
-        //获取服务
+        // 获取服务
         List<String> services = discoveryClient.getServices();
-        //获取对应的实例
+        // 获取对应的实例
         List<ServiceInstance> instances = discoveryClient.getInstances("MICROSERVICECLOUD-DEPT");
-        //遍历对应的实例并输出
+        // 遍历对应的实例并输出
         for (ServiceInstance element : instances) {
             System.out.println(element.getServiceId() + "\t" + element.getHost() + "\t" + element.getPort() + "\t" + element.getUri());
         }

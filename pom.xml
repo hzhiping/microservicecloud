@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <!--公用的jar包版本号抽取-->
+    <!-- 公用的 jar 包版本号抽取 -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -69,10 +69,10 @@
         </dependencies>
     </dependencyManagement>
 
-    <!--微服务模块化-->
+    <!-- 微服务模块化 -->
     <modules>
         <module>microservicecloud-api</module>
-        <!--Ribbon的整合-->
+        <!--Ribbon 的整合 -->
         <module>microservicecloud-consumer-dept-80</module>
         <module>microservicecloud-eureka-7001</module>
         <module>microservicecloud-eureka-7002</module>

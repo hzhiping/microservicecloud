@@ -26,7 +26,7 @@ public class FeignConfiguration {
 
     @Bean
     public Contract feignContract() {
-        //使用feign自带契约
+        // 使用feign自带契约
         return new feign.Contract.Default();
     }
 }

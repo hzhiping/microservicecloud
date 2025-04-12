@@ -24,17 +24,17 @@ public class FeignBasicAuthReqInterceptor implements RequestInterceptor {
 
     @Override
     public void apply(RequestTemplate template) {
-        //1、在apply中统一设置认证
+        // 1、在apply中统一设置认证
         template.header("Authorization", this.authorization);
-        //System.out.println("统一设置header");
-        //2、拦截获取请求header的信息并输出，不设置转发
-        //getHeaderInfo(template);
+        // System.out.println("统一设置header");
+        // 2、拦截获取请求header的信息并输出，不设置转发
+        // getHeaderInfo(template);
     }
 
     public void getHeaderInfo(RequestTemplate template) {
-        //项目如果集成了hystrix，并且在配置文件设置feign.hystrix.enabled=true，那么线程就会发生切换，
-        //而RequestContextHolder.getRequestAttributes()是通过ThreadLocal获取的信息，这时候就会导致空指针异常
-        //解决方法：feign.hystrix.enabled=false
+        // 项目如果集成了hystrix，并且在配置文件设置feign.hystrix.enabled=true，那么线程就会发生切换，
+        // 而RequestContextHolder.getRequestAttributes()是通过ThreadLocal获取的信息，这时候就会导致空指针异常
+        // 解决方法：feign.hystrix.enabled=false
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest req = attributes.getRequest();
         Enumeration<String> headerNames = req.getHeaderNames();

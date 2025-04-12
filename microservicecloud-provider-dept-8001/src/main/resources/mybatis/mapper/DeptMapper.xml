@@ -26,7 +26,7 @@
         select deptno as deptNo, dname as deptName, db_source as dbSource
         from dept
         where 1 = 1
-          and deptno = #{deptNo}
-          and db_source = #{dbSource}
+        and deptno = #{deptNo}
+        and db_source = #{dbSource}
     </select>
 </mapper>

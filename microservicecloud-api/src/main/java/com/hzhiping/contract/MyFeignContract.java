@@ -1,24 +1,24 @@
-//package com.hzhiping.contract;
+// package com.hzhiping.contract;
 //
-//import feign.Headers;
-//import feign.MethodMetadata;
-//import org.springframework.cloud.netflix.feign.support.SpringMvcContract;
-//import org.springframework.context.ConfigurableApplicationContext;
-//import org.springframework.core.io.ResourceLoader;
-//import org.springframework.stereotype.Service;
-//import org.springframework.util.StringUtils;
+// import feign.Headers;
+// import feign.MethodMetadata;
+// import org.springframework.cloud.netflix.feign.support.SpringMvcContract;
+// import org.springframework.context.ConfigurableApplicationContext;
+// import org.springframework.core.io.ResourceLoader;
+// import org.springframework.stereotype.Service;
+// import org.springframework.util.StringUtils;
 //
-//import java.util.ArrayList;
-//import java.util.Collection;
-//import java.util.LinkedHashMap;
-//import java.util.Map;
+// import java.util.ArrayList;
+// import java.util.Collection;
+// import java.util.LinkedHashMap;
+// import java.util.Map;
 //
-///**
+/// **
 // * @author hzhiping
 // * @date 2023/01/15
 // */
 //@Service
-//public class MyFeignContract extends SpringMvcContract {
+// public class MyFeignContract extends SpringMvcContract {
 //    /**
 //     * 该属性是为了使用SpringCloud Config
 //     */

@@ -11,7 +11,7 @@ import java.util.List;
  * @author hzhiping
  * @date 2023/01/18
  */
-@Component//千万不要忘记添加这个注解
+@Component// 千万不要忘记添加这个注解
 public class DeptClientServiceFallbackFactory implements FallbackFactory<DeptClientService> {
     @Override
     public DeptClientService create(Throwable throwable) {

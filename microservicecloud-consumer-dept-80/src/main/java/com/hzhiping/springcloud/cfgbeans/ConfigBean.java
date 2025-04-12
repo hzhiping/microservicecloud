@@ -21,20 +21,20 @@ public class ConfigBean {
      * @return {@link RestTemplate}
      */
     @Bean
-    @LoadBalanced//配置负载均衡
+    @LoadBalanced// 配置负载均衡
     public RestTemplate getRestTemplate() {
         return new RestTemplate();
     }
 
     @Bean
     public IRule myRule() {
-        return new RoundRobinRule();//达到的目的，用我们重新选择的随机算法替代默认的轮询算法
+        return new RoundRobinRule();// 达到的目的，用我们重新选择的随机算法替代默认的轮询算法
     }
 
     //@Bean
-    //public UserService getUserService() {
+    // public UserService getUserService() {
     //    return new UserServiceImpl();
     //}
-    //applicationContext.xml == 加了@Configuration的ConfigBean
+    // applicationContext.xml == 加了@Configuration的ConfigBean
     //<bean id="userService" class="com.hzhiping.UserServiceImpl">
 }

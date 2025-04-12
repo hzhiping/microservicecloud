@@ -8,8 +8,8 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/hzhiping/microservicecloud-config.git #GitHub上面的git仓库名字
-          basedir: /Users/hzhiping/git-repo/microservicecloud-config
+          uri: https://github.com/hzhiping/cloud-config.git # GitHub 上面的 git 仓库名字
+          basedir: /Users/hzhiping/git-repo/cloud-config
           default-label: main
 
 logging:

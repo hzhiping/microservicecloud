@@ -40,11 +40,11 @@ public class DeptController {
 
     @RequestMapping(value = "/dept/discovery", method = RequestMethod.GET)
     public Object discovery() {
-        //获取服务
+        // 获取服务
         List<String> services = discoveryClient.getServices();
-        //获取对应的实例
+        // 获取对应的实例
         List<ServiceInstance> instances = discoveryClient.getInstances("MICROSERVICECLOUD-DEPT");
-        //遍历对应的实例并输出
+        // 遍历对应的实例并输出
         for (ServiceInstance element : instances) {
             System.out.println(element.getServiceId() + "\t" + element.getHost() + "\t" + element.getPort() + "\t" + element.getUri());
         }
